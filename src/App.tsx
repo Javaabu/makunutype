@@ -6,9 +6,9 @@ import './App.css';
 
 // HMAC helper for signing session-score requests
 async function hmacSHA256Hex(keyHex: string, message: string): Promise<string> {
-  const hexToBytes = (hex: string): Uint8Array => {
+  const hexToBytes = (hex: string) => {
     const len = hex.length;
-    const bytes = new Uint8Array(len / 2);
+    const bytes = new Uint8Array(new ArrayBuffer(len / 2));
     for (let i = 0; i < len; i += 2) {
       bytes[i / 2] = parseInt(hex.substring(i, i + 2), 16);
     }
