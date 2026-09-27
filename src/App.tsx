@@ -736,7 +736,7 @@ const App: React.FC = () => {
                     {isLoadingLeaderboard ? (
                       <div className="leaderboard-empty">ލީޑަރބޯޑު ލޯޑުވަނީ...</div>
                     ) : leaderboardError ? (
-                      <div className="leaderboard-empty" style={{ color: '#ff4b2b' }}>{leaderboardError}</div>
+                      <div className="leaderboard-empty" style={{ color: 'var(--error-color)' }}>{leaderboardError}</div>
                     ) : leaderboard.length === 0 ? (
                       <div className="leaderboard-empty">އަދި މި ކެޓަގަރީއިން އެއްވެސް ސްކޯއެއް ނެތް</div>
                     ) : (
@@ -766,7 +766,7 @@ const App: React.FC = () => {
                 {isLoadingLeaderboard ? (
                   <div className="leaderboard-empty">ލީޑަރބޯޑު ލޯޑުވަނީ...</div>
                 ) : leaderboardError ? (
-                  <div className="leaderboard-empty" style={{ color: '#ff4b2b' }}>{leaderboardError}</div>
+                  <div className="leaderboard-empty" style={{ color: 'var(--error-color)' }}>{leaderboardError}</div>
                 ) : leaderboard.length === 0 ? (
                   <div className="leaderboard-empty">އަދި މި ކެޓަގަރީއިން އެއްވެސް ސްކޯއެއް ނެތް</div>
                 ) : (
