@@ -94,7 +94,7 @@ app.post('/api/session-score', (req, res) => {
 
     // Build canonical string for signing
     const canonical = [wpm, raw_wpm, accuracy, mode, config, timestamp].map(v => String(v)).join('|');
-    const expected = crypto.createHmac('sha256', sigKey).update(canonical).digest('hex');
+    const expected = crypto.createHmac('sha256', Buffer.from(sigKey, 'hex')).update(canonical).digest('hex');
 
     // Constant-time compare
     const valid = expected.length === sigHeader.length && crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(sigHeader));
